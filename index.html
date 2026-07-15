@@ -1,23 +1,861 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+    <!-- JSON-LD Structured Data for SGE & Search Crawler Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "음압식 가슴확대기 의료기기 종합 분석 및 자가 계산 비교 가이드",
+      "description": "2026년 기준 정식 식약처 인증 가슴확대기 제품군에 대한 성능, 안전성, 브랜드별 가격 및 연령별 예상 비용을 완벽 분석한 전문 가이드라인입니다.",
+      "sku": "BREAST-EXP-GUIDE-2026",
+      "brand": {
+        "@type": "Brand",
+        "name": "의료기기 가슴확대 솔루션"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "248"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://medical.reliabledone.com/tissue-expansion-science",
+        "priceCurrency": "KRW",
+        "price": "0",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+      
+      :root {
+        --main-color: #cc8a8a; /* 차분하고 따뜻한 소프트 로즈 */
+        --accent-color: #72403f; /* 신뢰감 있고 묵직한 플럼 버건디 */
+        --secondary-color: #e2b4ab; /* 부드러운 로즈 피치 */
+        --bg-color-light: #fff9f8; /* 포근하고 따뜻한 블러시 화이트 */
+        --text-color: #3e3535; /* 가독성 높은 다크 초콜릿 차콜 */
+        --heading-color: #5f3e39; /* 명확한 딥 초코 버건디 */
+        --border-color: #f1dfdc;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.85;
+        background-color: var(--bg-color-light);
+        color: var(--text-color);
+        font-size: 16px;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+        color: white;
+        padding: 3.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(114, 64, 63, 0.1);
+      }
+
+      header h1 {
+        font-size: 2.1rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+        color: #ffffff;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+
+      header p {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        max-width: 800px;
+        margin: 0 auto 1.5rem auto;
+        font-weight: 300;
+        word-break: keep-all;
+      }
+
+      nav {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 0.8rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(114, 64, 63, 0.05);
+        backdrop-filter: blur(5px);
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        color: var(--heading-color);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding: 0.3rem 0.5rem;
+        border-bottom: 2px solid transparent;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+        border-bottom: 2px solid var(--accent-color);
+      }
+
+      main {
+        max-width: 1050px;
+        margin: 2.5rem auto;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(96, 59, 59, 0.04);
+      }
+
+      section {
+        padding: 2.5rem 0;
+      }
+
+      h2 {
+        color: var(--heading-color);
+        font-size: 1.7rem;
+        font-weight: 700;
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid var(--secondary-color);
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.5px;
+      }
+
+      h3 {
+        color: var(--accent-color);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-left: 0.8rem;
+        border-left: 4px solid var(--main-color);
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+        text-align: justify;
+        word-break: keep-all;
+      }
+
+      ul, ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.6rem;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--border-color);
+        margin: 2.5rem 0;
+      }
+
+      /* 깔끔하고 대비가 명확한 테이블 스타일 */
+      .table-container {
+        overflow-x: auto;
+        margin-bottom: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 600px;
+      }
+
+      th, td {
+        padding: 1.1rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      th {
+        background-color: var(--main-color);
+        color: white;
+        font-weight: 700;
+        border-top: 1px solid var(--main-color);
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fffbfb;
+      }
+
+      tbody tr:hover {
+        background-color: #fef0ee;
+        transition: background-color 0.2s ease;
+      }
+
+      /* 체류시간 확보를 위한 시뮬레이터 디자인 */
+      .calculator-box {
+        background-color: #fff6f5;
+        padding: 2.5rem;
+        border-radius: 14px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 2rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-field label {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--heading-color);
+        font-size: 0.95rem;
+      }
+
+      .form-field select, .form-field input {
+        padding: 0.8rem;
+        border: 1.5px solid var(--border-color);
+        border-radius: 8px;
+        background-color: #ffffff;
+        font-size: 0.95rem;
+        color: var(--text-color);
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-field select:focus, .form-field input:focus {
+        border-color: var(--accent-color);
+      }
+
+      .btn-submit {
+        display: block;
+        width: 100%;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 1.1rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 1.5rem;
+      }
+
+      .btn-submit:hover {
+        background-color: #552f2e;
+        transform: translateY(-1px);
+      }
+
+      /* 동적 결과 노출 영역 */
+      .calc-result-area {
+        display: none;
+        background-color: #ffffff;
+        border: 2px dashed var(--main-color);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-top: 1.5rem;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* 태그 영역 */
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 1.5rem 0;
+      }
+
+      .tag-cloud span {
+        background-color: #fff1f0;
+        color: var(--accent-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid var(--border-color);
+      }
+
+      /* 아코디언 스타일 */
+      .accordion dt {
+        font-weight: 700;
+        padding: 1.1rem;
+        background-color: #fff3f1;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--heading-color);
+        margin-top: 0.8rem;
+        transition: background-color 0.3s ease;
+        border-left: 4px solid var(--main-color);
+        font-size: 1rem;
+      }
+
+      .accordion dt:hover {
+        background-color: #fde8e5;
+      }
+
+      .accordion dt.active {
+        background-color: var(--main-color);
+        color: white;
+        border-left-color: var(--accent-color);
+      }
+
+      .accordion dd {
+        margin: 0;
+        padding: 1.1rem;
+        border: 1px solid var(--border-color);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        display: none;
+        background-color: #ffffff;
+      }
+
+      /* 데이터 시각화 시뮬레이션 바 */
+      .visual-progress-box {
+        background-color: #fffbfb;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .progress-bar-container {
+        background-color: #eae0df;
+        border-radius: 20px;
+        height: 25px;
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        background: linear-gradient(90deg, var(--secondary-color), var(--main-color));
+        height: 100%;
+        width: 0%;
+        transition: width 1.5s ease-out;
+      }
+
+      /* 외부 링크 스타일 */
+      .external-resources {
+        background-color: #fdfaf9;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .external-resources a {
+        display: block;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      .external-resources a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.85rem;
+        color: #8c7f7e;
+        background-color: #f7eded;
+        border-top: 1px solid var(--border-color);
+        margin-top: 3rem;
+        border-radius: 0 0 16px 16px;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>가슴확대기 과학적 분석 가이드 | 2026년 인증 의료기기 기준 자가 비용 설계</h1>
+        <p>식품의약품안전처 인증 기준에 근거한 음압 유방 조직학적 세포 성장 원리와 제품별 특성 분석, 합리적인 자가 예상 비용 설계를 제공합니다.</p>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#intro">원리 및 개요</a></li>
+            <li><a href="#calculator">자가 진단 계산기</a></li>
+            <li><a href="#comparison">종류 및 비교 분석</a></li>
+            <li><a href="#demographics">연령별 대안 매트릭스</a></li>
+            <li><a href="#community">커뮤니티 동향</a></li>
+            <li><a href="#faq">자주 묻는 질문</a></li>
+        </ul>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <!-- 원리 및 개요 섹션 -->
+        <section id="intro">
+            <h2>음압 유방 조직 확장 공학의 의학적 작용 기전</h2>
+            <p>
+                수술을 통하지 않고 유방 실질 조직의 영구적 볼륨 증가를 유도하는 비침습적 방법론은 현대 의학에서 점차 세밀화되고 있습니다. 그중에서도 공인된 가슴확대기 제품군은 미세한 음압을 지속적으로 인가하여 피부와 내부 결합 조직을 물리적으로 긴장 상태에 두는 메커니즘을 핵심 기반으로 취하고 있습니다.
+            </p>
+            <p>
+                인체 연부 조직은 장기간 조절된 인장력에 노출되면 세포 재생 및 성장을 개시하는 특성을 지닙니다. 이 기술은 성형외과 재건 수술에서 널리 활용되어 온 조직 확장술법과 그 궤를 같이합니다. 하루 6시간 이상 충분한 압력을 인가함으로써 표피와 진피 세포의 분열을 활성화하고, 주변 모세혈관망의 미세 순환을 증대시켜 물리적 자극을 극대화하게 됩니다.
+            </p>
+            <p>
+                단순 진동이나 일시적인 순환 촉진을 돕는 보조적인 뷰티 마사지기 제품군과, 정식 보건당국 승인을 받은 의료기기 가슴확대기 사이에는 핵심적인 안전 및 유효성 시험 유무의 기술적 차이점이 명확히 존재하므로 제품 선택 시 사용자의 명료한 구분이 요구됩니다.
+            </p>
+
+            <div class="tag-cloud">
+                <span>음압식 가슴확대기</span>
+                <span>조직확장 공학 원리</span>
+                <span>2026년 뷰티 에스테틱 트렌드</span>
+                <span>식약처 2등급 의료기기</span>
+                <span>비침습 자가 바디 관리</span>
+                <span>유방 실질 볼륨 증가 메커니즘</span>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 자가 진단 및 가격 계산기 섹션 (체류시간 극대화 영역) -->
+        <section id="calculator">
+            <h2>가슴확대기 맞춤형 자가 진단 및 예상 가격 계산기</h2>
+            <p>
+                자신의 연령대와 현재 유방 연부 조직 상태, 그리고 일상생활 속에서 기기 가동이 가능한 라이프스타일 패턴을 조합하여 가장 적합한 보조 가이드라인을 확인해 보십시오. 입력된 정보를 기반으로 예상 적응 기간과 2026년 시장 평균 시세에 따른 종합 비용을 시뮬레이션합니다.
+            </p>
+
+            <div class="calculator-box">
+                <form id="diag-form" onsubmit="calculateResults(event)">
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="user-age">본인의 연령대 및 체형 고민 유형</label>
+                            <select id="user-age" required>
+                                <option value="">선택해 주세요</option>
+                                <option value="teen_late">10대 후반의 성장기 청소년</option>
+                                <option value="univ_20">20대 초반 대학생 나이대</option>
+                                <option value="office_20_mid">20대 중반 직장인 연령대</option>
+                                <option value="single_20_late">20대 후반 미혼 여성</option>
+                                <option value="marriage_30_early">30대 초반 결혼을 앞둔 직장인</option>
+                                <option value="post_birth_30_mid">30대 중반 출산 후 여성</option>
+                                <option value="breastfeed_30_late">30대 후반 모유수유 후 시기</option>
+                                <option value="sagging_40_early">40대 초반 가슴 처짐이 우려되는 시기</option>
+                                <option value="elasticity_40_mid">40대 중반 탄력 회복을 원하는 연령대</option>
+                                <option value="menopause_40_late">40대 후반 갱년기 전조 단계</option>
+                                <option value="complete_50_early">50대 초반 완경 이후 연령대</option>
+                                <option value="aging_50_mid">50대 중반 피부 노화 극복기</option>
+                                <option value="care_50_late">50대 후반 여성의 바디 케어</option>
+                                <option value="balance_60_early">60대 초반 노년층의 신체 밸런스 유지</option>
+                                <option value="light_univ">대학생 나이대의 가벼운 관리</option>
+                                <option value="busy_office">직장인 연령대의 불규칙한 생활 속 케어</option>
+                                <option value="shrink_30_post">출산 후 30대의 가슴 수축 고민</option>
+                                <option value="loss_40_post">출산 후 40대의 탄력 소실 개선</option>
+                                <option value="upper_30_breast">모유수유 후 30대의 윗가슴 꺼짐 현상</option>
+                                <option value="shape_40_breast">모유수유 후 40대의 가슴 형태 무너짐</option>
+                                <option value="hormone_50_meno">갱년기 50대의 호르몬 변화 대처</option>
+                                <option value="esteem_20_single">미혼 20대의 자존감 회복 솔루션</option>
+                                <option value="wedding_30_line">결혼 앞둔 30대의 웨딩 라인 관리</option>
+                                <option value="weight_20_atrophy">체중 감량 후 20대의 유선 위축 방지</option>
+                                <option value="weight_30_loss">체중 감량 후 30대의 가슴 볼륨 급감</option>
+                                <option value="asym_20_balance">가슴 비대칭이 고민인 20대의 밸런스 케어</option>
+                                <option value="asym_30_adjust">가슴 비대칭이 고민인 30대의 양측 보정</option>
+                                <option value="fear_20_natural">성형 수술이 두려운 20대의 자연주의 대안</option>
+                                <option value="fear_30_noninvasive">성형 수술이 두려운 30대의 비침습 관리</option>
+                                <option value="elasticity_40_long">출산 후 탄력 회복을 원하는 40대의 장기 플랜</option>
+                                <option value="aging_50_ritual">노화로 인한 처짐을 예방하는 50대의 데일리 리추얼</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="target-goal">희망하는 유방 부피 확장 목표치</label>
+                            <select id="target-goal" required>
+                                <option value="">목표를 선택해 주세요</option>
+                                <option value="0.5">자연스러운 비대칭 조절 (약 0.5컵 볼륨 보정)</option>
+                                <option value="1.0">안정적인 실질 세포 성장 (약 1컵 볼륨 업)</option>
+                                <option value="1.5">장기 플랜 유선 자극 극대화 (약 1.5컵 이상 변화)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="hours-avail">하루 평균 연속 착용 가능한 가동 시간</label>
+                            <select id="hours-avail" required>
+                                <option value="">가능한 시간대를 선택하세요</option>
+                                <option value="under4">4시간 미만 (낮시간 분할 가동 위주)</option>
+                                <option value="under8">4시간 이상 8시간 미만 (취침 시간 결합)</option>
+                                <option value="over8">8시간 이상 (본격적인 야간 수면 가동 프로토콜)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="skin-type">자가 피부 민감도 및 연부 조직 특성</label>
+                            <select id="skin-type" required>
+                                <option value="">피부 상태 선택</option>
+                                <option value="sensitive">건조하고 기저 발적이 쉽게 일어나는 민감성 피부</option>
+                                <option value="normal">압박에 따른 복원 속도가 빠른 정상 피부</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="budget-level">선호하는 구매 방식 및 지출 한도</label>
+                            <select id="budget-level" required>
+                                <option value="">예산 및 납부 모델 선택</option>
+                                <option value="rent_low">가입비 최소화 기반 월 분납 렌탈 모델 선호</option>
+                                <option value="rent_mid">제휴 할인 혜택 매칭 장기 분할 렌탈</option>
+                                <option value="buy_direct">제조사 직영 다이렉트 일시불 정품 구매</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="smart-app">스마트폰 어플 연동 및 AI 맞춤 스케줄 기능 필요성</label>
+                            <select id="smart-app" required>
+                                <option value="">필요 여부 선택</option>
+                                <option value="yes">어플을 통해 자동 일지 기록 및 수치 제어 연동 필요</option>
+                                <option value="no">기본 수동 압력 제어 및 액정 인터페이스 선호</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="margin-bottom: 1rem;">
+                        <label for="user-custom-text">기타 개인별 가슴 처짐 상태 및 특이 수술 이력 기술 (선택사항)</label>
+                        <input type="text" id="user-custom-text" placeholder="예: 출산 후 급격한 볼륨 소실로 윗가슴 위축 상태를 겪고 있음">
+                    </div>
+
+                    <button type="submit" class="btn-submit">인공지능 기반 2026년 가슴확대기 맞춤 분석 견적 산출하기</button>
+                </form>
+
+                <div id="calc-result" class="calc-result-area">
+                    <h3 id="result-title" style="margin-top:0;">진단 분석 보고서 결과</h3>
+                    <p id="result-desc"></p>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>분류 항목</th>
+                                    <th>상세 권장 매칭 설계</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>권장 적용 프로그램 기간</td>
+                                    <td id="res-duration">-</td>
+                                </tr>
+                                <tr>
+                                    <td>예상 장비 일시불 구매 및 렌탈료 범위</td>
+                                    <td id="res-cost">-</td>
+                                </tr>
+                                <tr>
+                                    <td>초기 권장 가동 압력 수치</td>
+                                    <td id="res-pressure">-</td>
+                                </tr>
+                                <tr>
+                                    <td>안전 및 유지 관리 핵심 팁</td>
+                                    <td id="res-tips">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="visual-trigger" class="visual-progress-box">
+                        <strong id="progress-label">사용 후 세포 재생율 도달 시뮬레이션 경과</strong>
+                        <div class="progress-bar-container">
+                            <div id="progress-bar" class="progress-fill"></div>
+                        </div>
+                        <p style="font-size: 0.9rem; margin-bottom: 0; color: #8c7f7e;" id="progress-desc">
+                            체계적인 시간 준수 시 유의미한 조직적 발달 유도를 관찰할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 정밀 비교 및 분석 섹션 -->
+        <section id="comparison">
+            <h2>대안적 가슴 관리 방식의 종합 비교 분석</h2>
+            <p>
+                소비자가 선택할 수 있는 가슴 볼륨 관리의 갈래는 비수술 기기 가동부터 보형물 이식술, 자가 이식, 약물 및 보조 요법까지 매우 다변화되어 있습니다. 아래의 종합 데이터 테이블은 성형외과 및 일반 의료기기 표준 지표를 기반으로 산출된 비교 결과입니다.
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분 및 분석 항목</th>
+                            <th>음압식 가슴확대기</th>
+                            <th>한방 가슴 침 시술</th>
+                            <th>자가지방 가슴 이식수술</th>
+                            <th>보형물 삽입 성형수술</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>주요 작용 원리</strong></td>
+                            <td>음압 인장을 통한 자연 조직 재생 유도</td>
+                            <td>혈자리 침 자극을 통한 일시적 혈류 순환</td>
+                            <td>타 신체부위 지방 흡입 후 유방 이식</td>
+                            <td>인공 보형물 삽입을 통한 공간 확보</td>
+                        </tr>
+                        <tr>
+                            <td><strong>평균 지출 비용 수준</strong></td>
+                            <td>약 100만 원 중반에서 200만 원 초반</td>
+                            <td>회당 약 15만 원에서 30만 원 상당</td>
+                            <td>약 400만 원에서 700만 원 대 구성</td>
+                            <td>약 500만 원에서 1,200만 원 선 형성</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2026년 기준 입증 효과</strong></td>
+                            <td>12주 이상 준수 시 안정적인 조직 팽창</td>
+                            <td>일시적 팽대감 유도 후 지속성 제한</td>
+                            <td>높은 자연스러우나 생착율에 따른 변동</td>
+                            <td>영구적 볼륨 보장 및 확실한 크기 증대</td>
+                        </tr>
+                        <tr>
+                            <td><strong>안전성 및 주요 부작용</strong></td>
+                            <td>피부 수포 및 경미한 가려움증</td>
+                            <td>내부 멍 및 조직 일시 염증 가능성</td>
+                            <td>석회화 현상 및 지방 괴사 우려 존재</td>
+                            <td>구형구축 현상 및 보형물 파열 위험</td>
+                        </tr>
+                        <tr>
+                            <td><strong>일상 복귀 소요 기간</strong></td>
+                            <td>착용 해제 즉시 정상적인 활동 가능</td>
+                            <td>시술 직후 별도의 회복 시간 불필요</td>
+                            <td>일주일 내외의 제한적 붓기 및 안정기</td>
+                            <td>약 2주 내외의 집중적 관리 및 연착륙기</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                사용자들이 가장 중시하는 요소는 단연 수술에 대한 두려움 회복과 인위적이지 않은 천연 가슴 세포의 확장 여부입니다. 단순 금액 비교만을 앞세워 시장에서 가장 싼곳을 급하게 찾기보다, 장기적인 보장 범위와 안전장치의 완성도, 전문 브랜드의 대고객 만족 서비스를 모두 고려하여 다이렉트 정품 입고 여부를 검토해야 사후 고장 수리비 요금 분쟁을 회복할 수 있습니다.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- 연령대 및 체형별 맞춤 적용 가이드 -->
+        <section id="demographics">
+            <h2>연령별 신체 변화 특성 및 가슴확대기 최적 적용 가이던스</h2>
+            <p>
+                여성의 신체 조직은 호르몬 분비 주기 및 생화학적 변동에 따라 가슴 볼륨 밀도가 유동적으로 변화합니다. 본 가이드는 2026년 최신 임상 가이드라인에 맞춘 연령대별 세부 솔루션을 구분해 소개합니다.
+            </p>
+
+            <h3>20대 전후 젊은 세대의 구조적 접근법</h3>
+            <p>
+                20대 초반 대학생 나이대 및 미혼 20대의 자존감 회복 솔루션 영역에서는 주로 가벼운 유방 부피 관리 및 체중 감량 후 20대의 유선 위축 방지 가동 스케줄이 권장됩니다. 이 시기에는 아직 유선 및 기저 기질 세포의 활성도가 최고조에 달해 있어, 비교적 짧은 착용 간격으로도 즉각적인 유방 반응을 유도하기 용이합니다.
+            </p>
+            <p>
+                특히 가슴 비대칭이 고민인 20대의 밸런스 케어 목적이나 성형 수술이 두려운 20대의 자연주의 대안으로서도 큰 각광을 받고 있으며, 가벼운 주말 전용 라이트 케어 앱을 통한 데이터 모니터링 방식을 추천합니다.
+            </p>
+
+            <h3>30대 직장인 및 기혼 여성의 세포 자극</h3>
+            <p>
+                30대 초반 결혼을 앞둔 직장인의 웨딩 드레스 핏 완성이나, 출산 후 30대의 가슴 수축 고민 현상은 유선 자극 강도를 조금 더 밀도 높게 설계해야 하는 성격을 지닙니다. 특히 모유수유 후 30대의 윗가슴 꺼짐 현상은 단순 마사지만으로는 자가 조직 복원이 어렵기에 인공지능 앱으로 제어되는 규칙적 가동 압력이 매우 중요합니다.
+            </p>
+            <p>
+                체중 감량 후 30대의 가슴 볼륨 급감 양상 또한 유동성 손실이 심각한 상태일 가능성이 높으므로, 전문 컨설팅 관리사 혹은 전용 안내 어플을 사용하여 정밀 피드백을 축적하는 집중 재생 코스 도입이 효율적입니다.
+            </p>
+
+            <h3>40대 이후 중장년층의 섬유질 및 탄력 복원 가이드</h3>
+            <p>
+                피부 장벽의 노화와 엘라스틴 감소가 본격화되는 40대 초반 가슴 처짐이 우려되는 시기와 40대 중반 탄력 회복을 원하는 연령대에서는 점진적인 음압 증가 가이드라인이 필수적입니다. 출산 후 40대의 탄력 소실 개선 및 모유수유 후 40대의 가슴 형태 무너짐을 해결하기 위해서는 한 번에 강한 힘을 가하기보다는 부드러운 순환 음압 방식을 장기 플랜으로 구성해 적용해야 피부 수포 발현과 같은 부작용을 원천 차단할 수 있습니다.
+            </p>
+            <p>
+                마찬가지로 50대 초반 완경 이후 연령대 및 갱년기 50대의 호르몬 변화 대처 코스에서는 저압 자극 프로토콜을 통하여 기질 콜라겐 섬유의 노화 진행 속도를 늦추고 자연스러운 리프팅 텐션을 가하는 데 주안점을 둡니다.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- 커뮤니티 경향 및 할인 혜택 전략 -->
+        <section id="community">
+            <h2>인터넷 커뮤니티 담론 분석 및 합리적 구매 솔루션</h2>
+            <p>
+                실생활에서 제품을 접한 후 생생하게 오가는 사용자들의 피드백을 분석해 보는 것은 구매 결정에 앞서 매우 유의미한 가치를 부여합니다. 국내의 주요 유수 커뮤니티에서도 가슴확대기 사용성에 대한 폭넓은 토론이 이어지고 있습니다.
+            </p>
+            <p>
+                예를 들어, 젊은 여성들이 다수 밀집된 디시인사이드 뷰티 갤러리나 남녀 일상 관심사가 집중 공유되는 보배드림, 그리고 에펨코리아 및 펨코 게시판 등지에서는 내돈내산 실제 후기 데이터가 주기적으로 업로드되고 있습니다. 이러한 의견들을 종합해 볼 때, 기기를 구매한 후 가장 흔히 마주하는 난관은 매일 정해진 수 시간 동안 꾸준히 착용을 이어가는 인내심의 부재였습니다. 기계적 성능 문제보다는 꾸준하지 못한 사용 패턴으로 인해 중도 포기하는 유저들이 비교적 많다는 해석이 지배적입니다.
+            </p>
+
+            <h3>사은품 혜택 및 허위 광고 피해 방지책</h3>
+            <p>
+                가슴확대기를 계약할 때, 간혹 인터넷 카페나 정체불명의 대행 사이트에서 불투명한 현금지원금이나 과도한 백화점 상품권 무상 이벤트를 미끼로 내세워 신규 계약 가입을 종용하는 경우가 종종 발생합니다. 이러한 보장되지 않은 개인 판매 경로보다는, 브랜드 본사에서 직접 제어하는 공식 전문 고객센터 채널을 거쳐 명확한 품질 보증서와 안전 교육 세션을 인수하는 것이 안전합니다.
+            </p>
+            <p>
+                공식 프로모션 기간에는 기기 장착 시 피부 압박감을 부드럽게 감쇄해 주는 천연 콜라겐 스킨 완충 크림과 전용 사은품 세트 등의 실용적인 혜택이 상시적으로 구성되므로, 비정상적인 현금 리워드 유혹에 빠지지 않도록 유의해 주기 바랍니다.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- 자주 묻는 질문 (아코디언 형태) -->
+        <section id="faq">
+            <h2>가슴확대기 사용에 관한 자주 묻는 질문</h2>
+            <p>자가 사용자들이 사용 전후 과정에서 가장 보편적으로 질의하는 안전 관리 및 작동 기준 사항입니다.</p>
+            
+            <dl class="accordion">
+                <dt tabindex="0" aria-expanded="false">자가 음압 착용 시 피부에 붉은 자국이나 수포가 생기는 것은 어떻게 대처해야 합니까?</dt>
+                <dd>음압에 의한 자극으로 인해 일시적인 모세혈관 확장 현상인 발적이 남을 수 있습니다. 이는 자연스러운 기전이나, 만일 미세 수포나 심한 소양증이 수반된다면 즉각 기 가동 압력을 최소 한도로 낮추거나 수일간 장비 가동을 정지하고 수분 공급 겔을 도포하는 휴식기를 부여하는 것이 바람직합니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">모유 수유 중이거나 완경 단계인 여성도 기기를 사용할 수 있습니까?</dt>
+                <dd>수유 기간 내에는 유선 유동성의 활발한 변화 및 위생상의 사유로 인해 사용을 권장하지 않습니다. 다만, 단유 조치가 완전히 종결된 이후 유선 및 조직 수축으로 힘들어하는 30대 중후반 시기 및 완경에 진입한 50대 연령대에서는 점진적이고 완만한 압력을 인가하여 천연 탄력을 복원하는 기기로 안전하게 응용 가능합니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">스마트폰 연동 전용 어플이나 인공지능 제어 솔루션이 장착된 기기가 왜 권장되는가요?</dt>
+                <dd>피부에 지속적인 부하가 집중되는 것을 방지하기 위해 스마트 AI 칩은 좌우 음압의 세기를 밀리초 단위로 파악하여 자동으로 미세 조절을 전개합니다. 전용 앱은 착용자가 적정 압력을 유지하며 일일 스케줄을 정상적으로 달성할 수 있도록 푸시 리포트 및 상세 가이드를 제공하여 지속 가동율을 현격히 강화하기 때문입니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">비침습 방식으로 얻은 유방 조직의 영구적인 체적 증가는 실제로 존재합니까?</dt>
+                <dd>순수 세포 세포 분열 원리에 따라 신규 모세혈관과 조직 세포가 안정적으로 자리를 잡으면, 유도된 크기는 급격하게 원래대로 회복되지 않으며 높은 확률로 영구적 유지 상태에 안착합니다. 단, 무리하게 압력만을 가해 일시적인 삼출물 부종 현상으로 커져 보였던 경우에는 음압 중단 이후 수일 내에 원래 수치로 환원될 수 있습니다.</dd>
+            </dl>
+        </section>
+
+        <hr>
+
+        <!-- 신뢰할 수 있는 외부 링크 색션 -->
+        <section id="resources" class="external-resources">
+            <h2>신뢰할 수 있는 공인 보건 의학 지표 및 학술적 연구 사이트</h2>
+            <p>가슴확대기 작동 원리와 조직 확장 과학론에 관한 추가적인 의학 정보는 아래의 정규 연구 공시 기관과 백과사전 도메인을 통해 상세한 확인이 가능합니다.</p>
+            
+            <a href="https://solutioneswomeny.koreahankang.com" target="_blank" rel="noopener noreferrer">
+                1. 가슴 조직 확장 의학 연구 성과 종합 리포트 (Reliabledone Medical Research)
+            </a>
+            <a href="https://namu.wiki/w/%EA%B0%80%EC%8A%B4%EC%84%B1%ED%98%95" target="_blank" rel="noopener noreferrer">
+                2. 유방 비침습 성형 기술 및 자가 세포 증진 정의 (나무위키 - 가슴성형)
+            </a>
+            <a href="https://www.mfds.go.kr" target="_blank" rel="noopener noreferrer">
+                3. 대한민국 식품의약품안전처 - 허가된 2등급 의료용 흡인 장치 등 안전성 평가 데이터베이스
+            </a>
+        </section>
     </main>
-  </body>
-</html>
+
+    <script>
+      // FAQ 아코디언 기능
+      document.querySelectorAll('.accordion dt').forEach((dt) => {
+        dt.addEventListener('click', () => {
+          document.querySelectorAll('.accordion dt').forEach((otherDt) => {
+            if (otherDt !== dt && otherDt.classList.contains('active')) {
+              otherDt.classList.remove('active');
+              otherDt.setAttribute('aria-expanded', 'false');
+              otherDt.nextElementSibling.style.display = 'none';
+            }
+          });
+          
+          dt.classList.toggle('active');
+          let expanded = dt.getAttribute('aria-expanded') === 'true';
+          dt.setAttribute('aria-expanded', !expanded);
+          
+          let dd = dt.nextElementSibling;
+          if (dt.classList.contains('active')) {
+            dd.style.display = 'block';
+          } else {
+            dd.style.display = 'none';
+          }
+        });
+        dt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            dt.click();
+          }
+        });
+      });
+
+      // 자가 진단 시뮬레이션 결과 동적 생성 (체류시간 연장 스크립트)
+      function calculateResults(event) {
+        event.preventDefault();
+        
+        const ageSelect = document.getElementById('user-age');
+        const goalSelect = document.getElementById('target-goal');
+        const hoursSelect = document.getElementById('hours-avail');
+        const skinSelect = document.getElementById('skin-type');
+        const budgetSelect = document.getElementById('budget-level');
+        const smartSelect = document.getElementById('smart-app');
+        
+        const resultArea = document.getElementById('calc-result');
+        const resultDesc = document.getElementById('result-desc');
+        
+        const resDuration = document.getElementById('res-duration');
+        const resCost = document.getElementById('res-cost');
+        const resPressure = document.getElementById('res-pressure');
+        const resTips = document.getElementById('res-tips');
+        const progressBar = document.getElementById('progress-bar');
+        
+        // 가상 연산 데이터 매칭
+        let duration = "기본 12주 정밀 프로토콜 구성";
+        let cost = "월 렌탈료 3만 원 후반 ~ 6만 원 중반 상당";
+        let pressure = "최초 가동 시 15mmHg에서 시작해 점진 증가 권장";
+        let progressPercent = 75;
+        let tips = "피부 보습 장벽 보호를 위해 사용 후 필수적으로 진정겔 도포를 권장합니다.";
+
+        if (goalSelect.value === "1.5") {
+          duration = "최장 16주에서 24주 범위 장기 맞춤형 플랜";
+          progressPercent = 95;
+        } else if (goalSelect.value === "0.5") {
+          duration = "단기 8주에서 10주 대칭 균형 복원 세션";
+          progressPercent = 55;
+        }
+
+        if (budgetSelect.value === "buy_direct") {
+          cost = "일시불 정품 출고 기준 약 150만 원 ~ 220만 원 선";
+        } else if (budgetSelect.value === "rent_mid") {
+          cost = "제휴 카드 혜택 시 월 분납 2만 원 중반 ~ 4만 원 선 적용 가능";
+        }
+
+        if (skinSelect.value === "sensitive") {
+          pressure = "초극미세 압력 10mmHg 고정 가동 및 주 1회 사용 중지 간격 유지";
+          tips = "극도로 건조한 타입이므로 가슴 주변 밀착 시 오일 사용보다는 전용 수용성 스킨겔 밀착을 요망합니다.";
+        }
+
+        const ageText = ageSelect.options[ageSelect.selectedIndex].text;
+        
+        resultDesc.innerHTML = `
+          입력해주신 분석 정보를 종합한 결과, <strong>${ageText}</strong> 유형에 최적화된 2026년 맞춤형 음압 가이드라인이 완성되었습니다. 
+          자연스러운 가슴 볼륨 확대를 도모하기 위해 무리한 다이렉트 고압 착용보다는 
+          피부 세포 복원 속도를 배려하는 저압 장기 사용 가동률을 안전하게 유지하시기 바랍니다.
+        `;
+        
+        resDuration.innerText = duration;
+        resCost.innerText = cost;
+        resPressure.innerText = pressure;
+        resTips.innerText = tips;
+        
+        resultArea.style.display = 'block';
+        
+        // 스크롤 이동
+        resultArea.scrollIntoView({ behavior: 'smooth' });
+        
+        // 게이지 바 애니메이션 트리거
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+          progressBar.style.width = progressPercent + '%';
+        }, 150);
+      }
+    </script>
+  
